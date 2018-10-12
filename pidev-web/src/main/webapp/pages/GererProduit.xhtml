@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:dataTable value="#{productBean.products}" var="produit" border="1">
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="name" />
+			</f:facet>
+			<h:outputText value="#{produit.name}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="description" />
+			</f:facet>
+			<h:outputText value="#{produit.description}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="price" />
+			</f:facet>
+			<h:outputText value="#{produit.price}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="quantite" />
+			</f:facet>
+			<h:outputText value="#{produit.quantity}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="path" />
+			</f:facet>
+			<h:outputText value="#{produit.picture}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Categorie" />
+			</f:facet>
+			<h:outputText value="#{produit.categorie}" />
+		</h:column>
+		<h:column>
+		<h:form>
+		<h:commandButton action="#{productBean.delete(produit.id,produit.picture)}" value="supprimer" />
+		
+		<h:commandButton action="#{productBean.modifier(produit)}" value="Modifier" />
+	</h:form>
+		</h:column>
+	</h:dataTable>
+	
+		<h:panelGrid columns="2">
+		<h:form enctype="multipart/form-data">
+			<h:outputText value="name" />
+			<h:inputText value="#{productBean.name}" required="true" requiredMessage="Nom obligatoire" />
+			
+			<h:outputText value="quantity" />
+			<h:inputText value="#{productBean.quantity}" required="true" requiredMessage="Quant obligatoire" />
+			
+		<h:outputText value="price" />
+			<h:inputText value="#{productBean.price}" required="true" requiredMessage="Price obligatoire"/>
+			
+			<h:outputText value="description" />
+			<h:inputText value="#{productBean.description}" required="true" requiredMessage="Description obligatoire" />
+			
+			
+		<h:outputText value="Image" />
+			
+			<h:inputFile value="#{productBean.file}"/>
+			
+							
+			<h:commandButton action="#{productBean.Update()}" value=" Mettre a jour employe" />
+				
+				</h:form>
+			
+		
+		</h:panelGrid>
+	
+	
+	
+	
+</html>

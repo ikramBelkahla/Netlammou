@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	   xmlns:f="http://xmlns.jcp.org/jsf/core"
+	   xmlns:h="http://xmlns.jcp.org/jsf/html"
+	   xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	   xmlns:jsf="http://xmlns.jcp.org/jsf"
+	   xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	   xmlns:p="http://primefaces.org/ui">
+	   
+<h:head>
+	<title>Ajouter Produit</title>
+</h:head>
+<h:body>
+	<h2>Ajouter votre produit</h2>
+		<h:panelGrid columns="2">
+		
+		<h:form enctype="multipart/form-data">
+		
+			<h:outputText value="name" />
+			
+			<p:inputText value="#{productBean.name}" required="true" requiredMessage="Nom obligatoire"/>
+			<h:outputText value="quantity" />
+			<p:inputText value="#{productBean.quantity}" required="true" requiredMessage="Quant obligatoire"/>
+			
+			
+		<h:outputText value="price" />
+		<p:inputText value="#{productBean.price}" required="true" requiredMessage="Price obligatoire"/>
+			
+			
+			<h:outputText value="description" />
+			
+		<p:inputText value="#{productBean.description}" required="true" requiredMessage="Description obligatoire"/>
+        
+        <p:outputLabel for="categorie" value="Categorie: " />
+        <p:selectOneMenu id="categorie" value="#{productBean.categorie}" effect="fold" editable="true">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem itemLabel="Vetement" itemValue="Vetement"/>
+            <f:selectItems value="#{productBean.categorie}" />
+        </p:selectOneMenu>
+			
+			
+			
+			<h:inputFile value="#{productBean.file}"/>
+			
+		
+			
+				
+			
+				<h:commandButton action="#{productBean.upload()}" value="Add" />
+				</h:form>
+			
+		
+		</h:panelGrid>
+	
+	
+</h:body>
+</html>

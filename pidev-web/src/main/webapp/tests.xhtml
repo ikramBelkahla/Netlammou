@@ -1,0 +1,114 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      template="/template/template.xhtml">
+<ui:define name="content">
+
+<h:form id="form">
+ 
+<!-- affichage -->
+<p:dataTable value="#{feedbackBean.feedbacks}" var="a" border="1" >
+
+	<p:column>
+	<f:facet name="header">
+	<h:outputText value="Desc" />
+	</f:facet>
+	<h:outputText value="#{a.description}" />
+	</p:column>
+	
+	<p:column>
+	<f:facet name="header">
+	<h:outputText value="Date" />
+	</f:facet>
+	<h:outputText value="#{a.date}" />
+	</p:column>
+	
+	<p:column>
+	<f:facet name="header">
+	<h:outputText value="Action" />
+	</f:facet>
+	<center>
+	<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+       
+ 
+       
+        <p:selectBooleanButton id="value2" value="#{feedbackBean.value2}" onLabel="like" offLabel="dislike" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:100px">
+           
+        </p:selectBooleanButton>
+    </h:panelGrid>
+     <p:commandButton action="#{feedbackBean.valider(a.id)}" value="report" />
+     <p:commandButton id="submit" value="Submit" update="display" icon="ui-icon-check" oncomplete="PF('dlg').show()" />
+   
+    <p:dialog id="dialog" header="Values" modal="true" resizable="false" showEffect="fade" widgetVar="dlg">
+        <h:panelGrid columns="1" id="display">
+          
+            <h:outputText value="Value 2: #{feedbackBean.value2}" />
+        </h:panelGrid>
+    </p:dialog>
+ 
+	</center>
+	
+	</p:column>	
+	
+</p:dataTable>
+	<h:form id="form">
+
+        <p:tab title="Add Feedback ! " >
+            <h:panelGrid columns="2" cellpadding="10" >
+             
+              <p:panelGrid columns="2"  > 
+
+<p:outputLabel value="Description" />
+<p:inputText value="#{feedbackBean.description}" />
+
+<h:commandButton action="#{feedbackBean.addFeedback()}" value="Ajouter" />
+<h:commandButton  action="#{feedbackBean.mettreAjourFeedback()}" value="Update"  />
+
+</p:panelGrid>
+
+<!-- affichage -->
+<p:dataTable value="#{feedbackBean.feedbacks}" var="a" border="1" >
+	
+	
+	<p:column>
+	<f:facet name="header">
+	<h:outputText value="Description" />
+	</f:facet>
+	<h:outputText value="#{a.description}" />
+	</p:column>
+	
+	
+	
+	
+	<p:column>
+	<f:facet name="header">
+	<h:outputText value="Action" />
+	</f:facet>
+	<center>
+	<h:commandButton action="#{feedbackBean.supprimer(a.id)}" value="supprimer" />
+	
+	
+	<h:commandButton action="#{feedbackBean.modifier(a)}" value="Modifier" /></center>
+	
+	</p:column>	
+	</p:dataTable>
+
+
+
+  
+            </h:panelGrid>
+       
+            
+        </p:tab>
+        
+   
+	
+	</h:form>
+	
+</h:form>
+
+</ui:define>
+
+</ui:composition>

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html" 
+    xmlns:f="http://java.sun.com/jsf/core">
+    
+	<h:head>
+		<title>NETlammou</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</h:head>
+	<h:body>
+		<div id="page-wrapper">
+<H5 style="text-align: right; margin-right: 2cm;margin-top:initial;">
+					<h:form>
+					<i class="fa fa-user fa-fw"></i> 
+					<h:commandLink action="#{loginBean.doLogout()}" value="Log Out " />  
+ 					</h:form>
+					</H5>
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+						<h2><a href="/pidev-web/indexNgo.jsf" id="logo">.NET<em>lammou</em></a></h2>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li class="current"><a href="/pidev-web/indexNgo.jsf">Home</a></li>
+								<li>
+									<a href="#">Action</a>
+									<ul>
+										<li><a href="#"></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">User</a>
+									
+								</li>
+								<li>
+									<a href="/pidev-web/localisation.jsf">Localisation</a>
+									
+								</li>	
+									<li>
+									<a href="/pidev-web/product.jsf">Product</a>
+								</li>
+								<li>
+									<a href="/pidev-web/feedback.jsf">Feedback</a>
+								</li>
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Banner -->
+				<section id="banner">
+				<ui:include src="/mapDiv.xhtml" />
+				<header>
+				<TABLE>
+				 <tr>
+    				<th>
+    				<h:form id="myform">
+       				    <h:selectOneMenu value="#{localisationBean.t}" id="typesearch"  class="special">
+        				<f:selectItem itemLabel=" Select an action type"/>
+        				<f:selectItems value="#{data.geTypes()}" />
+        				</h:selectOneMenu>	
+ 	 				</h:form>
+ 	 				</th>
+					
+					<th>		
+					<input class="button" type="button" id="search" value="serch" onclick="search()"/>
+					</th>
+				</tr>
+				</TABLE>
+				</header>
+				</section>
+
+			<!-- Posts -->
+				<section class="wrapper style1">
+					<div class="container">
+						<div class="row">
+							<ui:include src="/pages/ngos/indexAction.xhtml" />	 	
+						</div>
+					</div>
+				</section>
+
+			
+
+			<!-- Footer -->
+			<!-- Footer -->
+				<div id="footer">
+							<!-- Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+						</ul>
+
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li> Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+<ui:insert></ui:insert>
+				</div>
+		
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</h:body>
+</html>

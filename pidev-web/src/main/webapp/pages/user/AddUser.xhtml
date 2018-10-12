@@ -1,0 +1,42 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/template/template.xhtml"
+    xmlns:p="http://primefaces.org/ui">
+ <ui:define name="title">AddUser</ui:define>
+ <ui:define name="content">
+
+<h:form id="form">
+     <h:panelGrid columns="2">
+     
+     <h:outputText value="firstName"/>
+     <h:inputText value="#{userBean.firstName}"/>
+    
+     <h:outputText value="lastName"/>
+     <h:inputText value="#{userBean.lastName}"/>
+     
+      
+
+		<h:outputText value="adress"/>
+		<h:inputText value="#{userBean.adress}"/>
+		
+        <h:outputText value="mailAddress"/>
+        <h:inputText value="#{userBean.mailAdress}"/>
+        
+ 
+         <h:outputText value="phoneNumber"/>
+         <h:inputText value="#{userBean.phoneNumber}"/>
+         
+        <h:outputText value="password"/>
+        <h:inputText value="#{userBean.password}"/>
+        
+          <h:outputText value="description"/>
+          <h:inputText value="#{userBean.description}"/>
+          <h:commandButton action="#{userBean.addVolunteer()}" value="ajouter user" />
+
+</h:panelGrid>
+</h:form>
+</ui:define>
+</ui:composition>

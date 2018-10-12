@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" xmlns:jsf="http://xmlns.jcp.org/jsf">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description"
+		content="A fully featured admin theme which can be used to build CRM, CMS, etc." />
+	<meta name="author" content="Coderthemes" />
+	<h:outputStylesheet name="assets3/images/favicon_1.ico" />
+
+
+	<title>.NETlammou</title>
+	<link rel="stylesheet" href="assets3/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets3/css/core.css" />
+	<link rel="stylesheet" href="assets3/css/components.css" />
+	<link rel="stylesheet" href="assets3/css/icons.css" />
+	<link rel="stylesheet" href="assets3/css/pages.css" />
+	<link rel="stylesheet" href="assets3/css/responsive.css" />
+
+
+	<!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	<link rel="stylesheet" href="assets/js/modernizr.min.js" />
+
+	<script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-69506598-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+
+
+</head>
+<body>
+	<H4 style="text-align: left; margin-left: 2cm; margin-top:1cm; color: white;">
+			<a href="/pidev-web/login1.jsf"> 
+			<i class="fa  fa-angle-double-left fa-fw"></i> 
+			Back </a>
+	</H4>
+	<div class="account-pages" />
+
+	<div class="clearfix" />
+
+	<div class="wrapper-page">
+
+		<div class=" card-box">
+
+			<div class="panel-heading">
+
+				<h3 class="text-center">
+					Sign Up to <strong class="text-custom">.NETlammou</strong>
+				</h3>
+			</div>
+			<h:form enctype="multipart/form-data">
+
+			<div class="panel-body">
+
+				<div class="form-group ">
+
+					<div class="col-xs-12">
+					
+							<h:outputText value="firstName"/>
+  <h:inputText value="#{userBean.firstName}" class="form-control"/>
+							
+					</div>
+				</div>
+
+				<div class="form-group ">
+
+					<div class="col-xs-12">
+					<h:outputText value="LastName"/>
+  <h:inputText value="#{userBean.lastName}" class="form-control"/>
+					</div>
+				</div>
+
+				<div class="form-group">
+
+					<div class="col-xs-12">
+						<h:outputText value="Adress"/>
+  <h:inputText value="#{userBean.adress}" class="form-control"/>
+					</div>
+				</div>
+<div class="form-group">
+
+					<div class="col-xs-12">
+						<h:outputText value="MailAdress"/>
+  <h:inputText value="#{userBean.mailAdress}" class="form-control"/>
+					</div>
+				</div>
+			
+				<div class="form-group">
+
+					<div class="col-xs-12">
+						<h:outputText value="PhoneNumber"/>
+  <h:inputText value="#{userBean.phoneNumber}" class="form-control"/>
+					</div>
+				</div>
+				<div class="form-group">
+
+					<div class="col-xs-12">
+						<h:outputText value="Password"/>
+  <h:inputSecret value="#{userBean.password}"  class="form-control"/>
+					</div>
+				</div>
+				
+             
+          
+			
+				  <h:inputFile value="#{userBean.file}"> 
+				  </h:inputFile>
+				
+			
+				<div class="form-group text-center m-t-40">
+
+					<div class="col-xs-12">
+
+					
+							<h:commandButton action="#{userBean.addVolunteer()}" value="register"  style="color:#f442c8"
+					
+						
+								 href="inscriuser.jsf" />
+						
+						</div>
+						
+						
+					</div>
+								</div>
+
+				<div class="form-group m-t-20 m-b-0">
+
+					<div class="col-sm-12 text-center">
+
+						<h4>
+							<b>Sign Up with</b>
+						</h4>
+					</div>
+				</div>
+</h:form>
+
+<div class="row">
+
+			<div class="col-sm-12 text-center">
+
+				<p>
+					Already have account?<a href="login1.jsf"
+						class="text-primary m-l-5"><b>Sign In</b></a>
+				</p>
+			</div>
+</div>
+</div>
+			
+		</div>
+
+		
+	
+	<script src="assets3/js/jquery.min.js"></script >
+	<script src="assets3/js/bootstrap.min.js" ></script >
+	<script src="assets3/js/detect.js" ></script >
+	<script src="assets3/js/fastclick.js" ></script >
+	<script src="assets3/js/jquery.slimscroll.js" ></script >
+	<script src="assets3/js/jquery.blockUI.js" ></script >
+	<script src="assets3/js/waves.js" ></script >
+	<script src="assets3/js/wow.min.js" ></script >
+	<script src="assets3/js/jquery.nicescroll.js" ></script >
+	<script src="assets3/js/jquery.scrollTo.min.js" ></script >
+	<script src="assets3/js/jquery.core.js" ></script >
+	<script src="assets3/js/jquery.app.js" ></script >
+
+</body>
+
+
+</html>
